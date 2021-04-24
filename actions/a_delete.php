@@ -4,9 +4,11 @@ require_once 'db_connect.php';
 if ($_POST) {
     $id = $_POST['id'];
     $picture = $_POST['picture'];
+    // $picture = file_upload($_FILES['picture']);  
+    var_dump($picture);
     ($picture =="product.png")?: unlink("../pictures/$picture");
 
-    $sql = "DELETE FROM products WHERE id = {$id}";
+    $sql = "DELETE FROM media WHERE id = {$id}";
     if ($connect->query($sql) === TRUE) {
         $class = "success";
         $message = "Successfully Deleted!";

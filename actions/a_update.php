@@ -3,23 +3,60 @@ require_once 'db_connect.php';
 require_once 'file_upload.php';
 
 if ($_POST) {    
-    $name = $_POST['name'];
-    $price = $_POST['price'];
-    $id = $_POST['id'];
-    //variable for upload pictures errors is initialized
     $uploadError = '';
-
+    $id = $_POST['id'];
     $picture = file_upload($_FILES['picture']);//file_upload() called  
+    $title = $_POST['title'];
+    $media_type = $_POST['media_type'];
+    $pub_date = $_POST['pub_date'];
+    $description = $_POST['description'];
+    $isbn = $_POST['isbn'];
+    $aut_fname = $_POST['aut_fname'];
+    $aut_lname = $_POST['aut_lname'];
+    $pub_name = $_POST['pub_name'];
+    $pub_address = $_POST['pub_address'];
+    $pub_size = $_POST['pub_size'];
+    $availability = $_POST['availability'];
+    //variable for upload pictures errors is initialized
+
     if($picture->error===0){
+        
         ($_POST["picture"]=="product.png")?: unlink("../pictures/$_POST[picture]");           
-        $sql = "UPDATE products SET name = '$name', price = $price, picture = '$picture->fileName' WHERE id = {$id}";
+        $sql = "UPDATE media SET 
+        title ='$title',
+        picture = '$picture->fileName',
+        media_type='$media_type',        
+        pub_date = '$pub_date',
+        description = '$description',
+        isbn = '$isbn',
+        aut_fname = '$aut_fname',
+        aut_lname = '$aut_lname',
+        pub_name = '$pub_name',
+        pub_address = '$pub_address',
+        pub_size = '$pub_size',
+        availability = '$availability'
+        
+         WHERE id = {$id}";
     }else{
-        $sql = "UPDATE products SET name = '$name', price = $price WHERE id = {$id}";
+        $sql = "UPDATE media SET 
+        title ='$title',
+        media_type='$media_type',        
+        pub_date = '$pub_date',
+        description = '$description',
+        isbn = '$isbn',
+        aut_fname = '$aut_fname',
+        aut_lname = '$aut_lname',
+        pub_name = '$pub_name',
+        pub_address = '$pub_address',
+        pub_size = '$pub_size',
+        availability = '$availability'
+        
+         WHERE id = {$id}";
     }    
     if ($connect->query($sql) === TRUE) {
         $class = "success";
         $message = "The record was successfully updated";
-        $uploadError = ($picture->error !=0)? $picture->ErrorMessage :'';
+       $uploadError = ($picture->error !=0)? $picture->ErrorMessage :'';
     } else {
         $class = "danger";
         $message = "Error while updating record : <br>" . $connect->error;

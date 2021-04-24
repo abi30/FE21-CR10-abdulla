@@ -3,7 +3,7 @@
 $hostname = "localhost";
 $username = "root";
 $password = "";
-$dbname = "crud_example";
+$dbname = "cr10_biglibrary_abdulla";
 
 // create connection
 $connect = mysqli_connect($hostname, $username, $password, $dbname);
@@ -12,6 +12,6 @@ $connect = mysqli_connect($hostname, $username, $password, $dbname);
 if($connect->connect_error) {
     die("Connection failed: " . $connect->connect_error);
 }else {
-    echo "Successfully Connected";
+    // echo "Successfully Connected";
 }
 

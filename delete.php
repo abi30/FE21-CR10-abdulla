@@ -3,13 +3,28 @@ require_once 'actions/db_connect.php';
 
 if ($_GET['id']) {
     $id = $_GET['id'];
-    $sql = "SELECT * FROM products WHERE id = {$id}" ;
+    $sql = "SELECT * FROM media WHERE id = {$id}" ;
     $result = $connect->query($sql);
     $data = $result->fetch_assoc();
     if ($result->num_rows == 1) {
-        $name = $data['name'];
-        $price = $data['price'];
+       
+
         $picture = $data['picture'];
+        $title = $data['title'];
+        $media_type = $data['media_type'];
+        $pub_date = $data['pub_date'];
+        $description = $data['description'];
+        $isbn = $data['isbn'];
+        $aut_fname = $data['aut_fname'];
+        $aut_lname = $data['aut_lname'];
+        $pub_name = $data['pub_name'];
+        $pub_address = $data['pub_address'];
+        $pub_size = $data['pub_size'];
+        $availability = $data['availability'];
+
+
+
+
     } else {
         header("location: error.php");
     }
@@ -44,7 +59,7 @@ if ($_GET['id']) {
             <h5>You have selected the data below:</h5>
             <table class="table w-75 mt-3">
                 <tr>
-                    <td><?php echo $name?></td>
+                    <td><?= $title?></td>
                 </tr>
             </table>
 
