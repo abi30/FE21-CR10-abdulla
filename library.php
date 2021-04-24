@@ -9,7 +9,7 @@ if(mysqli_num_rows($result)  > 0) {
     while ( $row=mysqli_fetch_assoc($result)) {
     // while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)){        
        $tbody .= '
-       <div class="col text-center p-2">
+       <div class="col own_col text-center p-2">
        <div class="card text-center w-100 h-100 rounded-3 " style="width: 18rem;">
        <img class="img-thumbnail own_pic" src="pictures/' .$row["picture"].'"/>
            <div class="card-body">
@@ -64,7 +64,7 @@ $connect->close();
            <div class='mb-3'>
        <?php require_once 'nav.php' ?>
            <p  class='h2'>All Gallery's Items</p>
-       <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3  g-3">
+       <div class="row row-cols-1 row-cols-md-2 justify-content-center row-cols-lg-3 g-3">
               
         
            
