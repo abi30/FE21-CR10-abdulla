@@ -20,8 +20,8 @@ if(mysqli_num_rows($result)  > 0) {
            <td>" .$row['pub_date']."</td>
            <td>" .$row['pub_name']."</td>
            <td>" .$row['pub_size']."</td>
-            <td>" .$row['pub_address']."</td>
-            <td>" .$row['availability']."</td>
+           <td>" .$row['pub_address']."</td>
+           <td>" .$row['availability']."</td>
 
            <td><a href='update.php?id=" .$row['id']."'><button class='btn btn-primary btn-sm' type='button'>Edit</button></a>
            <a href='delete.php?id=" .$row['id']."'><button class='btn btn-danger btn-sm' type='button'>Delete</button></a></td>
