@@ -4,8 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <?php require_once 'components/boot.php'?>
-        <link rel="stylesheet" href="style.css?ver=<?php echo time(); ?>">
-
+        <link rel="stylesheet" href="style/style.css?ver=<?php echo time(); ?>">
 
         <title>PHP CRUD  |  Add Product</title>
         <style>

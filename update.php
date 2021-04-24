@@ -40,7 +40,7 @@ if ($_GET['id']) {
     <head>
         <title>Edit Product</title>
         <?php require_once 'components/boot.php'?>
-        <link rel="stylesheet" href="style.css?ver=<?php echo time(); ?>">
+        <link rel="stylesheet" href="style/style.css?ver=<?php echo time(); ?>">
 
         <style type= "text/css">
             fieldset {

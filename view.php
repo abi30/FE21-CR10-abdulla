@@ -47,7 +47,7 @@ if ($_GET['id']) {
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <?php require_once 'components/boot.php';?>
     <title>View | media</title>
-    <link rel="stylesheet" href="style.css?ver=<?php echo time(); ?>">
+    <link rel="stylesheet" href="style/style.css?ver=<?php echo time(); ?>">
   </head>
    <body>
        <div class="container manageProduct w-100 mt-3" >   
