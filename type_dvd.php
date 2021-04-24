@@ -1,6 +1,6 @@
 <?php require_once 'actions/db_connect.php';
-
-$sql = "SELECT * FROM media where media_type='dvd'";
+     
+$sql = "SELECT * FROM media where media_type='dvd' order by id desc" ;
 $result = mysqli_query($connect ,$sql);
 $tbody=''; //this variable will hold the body for the table
 if(mysqli_num_rows($result)  > 0) {   
@@ -9,7 +9,9 @@ if(mysqli_num_rows($result)  > 0) {
        $tbody .= "<tr>
 
      
-            <td><img class='img-thumbnail' src='pictures/" .$row['picture']."'</td>
+            <td>
+             <a href='view.php?id=" .$row['id']."'> <img class='img-thumbnail' src='pictures/" .$row['picture']."'/></a>
+           </td>
            <td>" .$row['title']."</td>
            <td>".$row['aut_fname'].' '.$row['aut_lname']."</td> 
            <td>" .$row['media_type']."</td>
@@ -38,7 +40,7 @@ $connect->close();
 
 ?>
 
-<!--       <td>" .$row['id']."</td> -->
+
 
 
 <!DOCTYPE html>
@@ -65,18 +67,21 @@ $connect->close();
                text-align: center;
            }
        </style>
-        <link rel="stylesheet" href="style.css">
-   </head>
-   <body>
+       <link rel="stylesheet" href="style.css?ver=<?php echo time(); ?>">
+    </head>
+    <body>
        <div class="container manageProduct w-100 mt-3" >   
-       <div class='mb-3'>
-       <?php require_once 'nav.php';?>
+     
 
-                <a href= "create.php" ><button class='btn btn-primary'type = "button" >Add product</button></a>
+           <div class='mb-3'>
+       <?php require_once 'nav.php' ?>
+
+                <!-- <a href= "create.php" ><button class='btn btn-primary'type = "button" >Add product</button></a> -->
             </div>
-           <p  class='h2'>Products</p>
+           <p  class='h2'>All Gallery's Items</p>
+           <div class="table-responsive">
 
-            <table class='table table-striped'>
+            <table class='table table-striped w-auto'>
                <thead class='table-success' >
                    <tr>
 
@@ -95,7 +100,7 @@ $connect->close();
                         <th>Action</th>
 
                    </tr>
-               </thead>
+                </thead>
                <tbody>
               
              
@@ -103,5 +108,7 @@ $connect->close();
                </tbody>
             </table>
        </div>
+       </div>
     </body>
 </html >
+

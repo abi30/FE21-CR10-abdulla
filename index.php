@@ -67,9 +67,9 @@ $connect->close();
                text-align: center;
            }
        </style>
-       <link rel="stylesheet" href="style.css">
-   </head>
-   <body>
+       <link rel="stylesheet" href="style.css?ver=<?php echo time(); ?>">
+    </head>
+    <body>
        <div class="container manageProduct w-100 mt-3" >   
      
 

@@ -47,7 +47,7 @@ if ($_GET['id']) {
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <?php require_once 'components/boot.php';?>
     <title>View | media</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?ver=<?php echo time(); ?>">
   </head>
    <body>
        <div class="container manageProduct w-100 mt-3" >   
@@ -65,7 +65,7 @@ if ($_GET['id']) {
 
        
        <div class="col text-center d-flex justify-content-center">
-       <div class="card text-center w-50 rounded-3 m-5 " style="width: 18rem;">
+       <div class="card text-center rounded-3 m-5 " style="width: 25rem;">
        <img class="card-img-top  m-auto" src="pictures/<?php echo $picture?> ">
            <div class="card-body">
                <h5 class="card-title"> Title : <?php echo $title?> </h5>
@@ -80,13 +80,6 @@ if ($_GET['id']) {
                <a class="btn btn-primary" href ="update.php?id=<?=$id ;?>">update</a>
                </div>
            </div>
-       <!-- </div> -->
-       
-
-    
-
-    
-
 
         </div>
       

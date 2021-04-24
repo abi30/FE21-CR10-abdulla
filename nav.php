@@ -11,13 +11,13 @@
           <span style="color: rgb(255, 255, 254);font-size: larger;font-weight: bolder; ">VIENNA</span></a>
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-            <a class="nav-link"aria-current="page" href="index.php">Home</a>
+            <a class="nav-link" id="desc" type="button" href="library.php" >Library</a>
             </li>
             <li class="nav-item">
             <a class="nav-link" id="asc" type="button" href="create.php">Add Items</a>
             </li>
             <li class="nav-item">
-            <a class="nav-link" id="desc" type="button" href="#" >descending</a>
+            <a class="nav-link"aria-current="page" href="index.php">Database</a>
             </li>
 
 

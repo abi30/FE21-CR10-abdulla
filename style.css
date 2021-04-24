@@ -18,13 +18,17 @@ body{
 
 }
 .hero_img{
-    background-image: url("https://i.pinimg.com/originals/ca/99/7f/ca997f6ee92232457f18719f895fbf8a.jpg"); 
+  background-image: url("https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/cfadd350399765.58cfe74799dad.jpg"); 
     width: 100%;
     height:20rem;
     background-color: #b61414;
     background-repeat: no-repeat;
     
     background-size: cover;
+}
+
+.own_pic{
+  max-height: 35rem;
 }
 
 .note{
