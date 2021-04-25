@@ -6,15 +6,15 @@ if ($_POST) {
     $uploadError = '';
     $id = $_POST['id'];
     $picture = file_upload($_FILES['picture']);//file_upload() called  
-    $title = $_POST['title'];
+    $title = htmlspecialchars($_POST['title']);
     $media_type = $_POST['media_type'];
     $pub_date = $_POST['pub_date'];
-    $description = $_POST['description'];
+    $description = htmlspecialchars($_POST['description']);
     $isbn = $_POST['isbn'];
-    $aut_fname = $_POST['aut_fname'];
-    $aut_lname = $_POST['aut_lname'];
-    $pub_name = $_POST['pub_name'];
-    $pub_address = $_POST['pub_address'];
+    $aut_fname = htmlspecialchars($_POST['aut_fname']);
+    $aut_lname = htmlspecialchars($_POST['aut_lname']);
+    $pub_name = htmlspecialchars($_POST['pub_name']);
+    $pub_address = htmlspecialchars($_POST['pub_address']);
     $pub_size = $_POST['pub_size'];
     $availability = $_POST['availability'];
     //variable for upload pictures errors is initialized
